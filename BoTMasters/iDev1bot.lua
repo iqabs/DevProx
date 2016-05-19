@@ -226,7 +226,6 @@ function create_config( )
     "stats",
     "supergroup",
     "whitelist",
-    "kick",
     "pvhelp",
     "plugins",
     "onservice",
@@ -240,7 +239,6 @@ function create_config( )
     "upredis",
     "me",
     "reply",
-    "upstart",
     "autoReply"
 
     },
