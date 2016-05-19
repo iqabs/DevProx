@@ -91,17 +91,17 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 ### [@iDev1](https://telegram.me/iDev1)
 
 # Special thanks to😋❤️
+#### * Oscar
+#### * Mico 
+#### * Mouamle
+#### * TeleSeed Team
+#### * DBTeam
 
-* #### Oscar
-* #### Mico 
-* #### Mouamle
-* #### TeleSeed Team
-* #### DBTeam
 # Our channels 😍👍
-* #### [@MastersDev](https://telegram.me/OSCARBOTv2)🌚⚠
-* #### [@OSCARBOTv2](https://telegram.me/Malvoo)🌚🔌
-* #### [@MouamleAPI](https://telegram.me/MouamleAPI)🌚🔩
-* #### [@Malvoo](https://telegram.me/MastersDev)🌚🔧
+#### [@MastersDev](https://telegram.me/OSCARBOTv2)🌚⚠
+#### [@OSCARBOTv2](https://telegram.me/Malvoo)🌚🔌
+#### [@MouamleAPI](https://telegram.me/MouamleAPI)🌚🔩
+#### [@Malvoo](https://telegram.me/MastersDev)🌚🔧
  
 # My YouTube Channel
 #### [YouTube](https://www.youtube.com/channel/UCKsJSbVGNGyVYvV5B2LrUkA)
