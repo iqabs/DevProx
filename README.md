@@ -98,10 +98,10 @@ Open ./data/config.lua and add your ID to the "sudo_users" section in the follow
 #### * DBTeam
 
 # Our channels 😍👍
-#### [@MastersDev](https://telegram.me/OSCARBOTv2)🌚⚠
-#### [@OSCARBOTv2](https://telegram.me/Malvoo)🌚🔌
+#### [@OSCARBOTv2](https://telegram.me/OSCARBOTv2)🌚⚠
+#### [@Malvoo](https://telegram.me/Malvoo)🌚🔌
 #### [@MouamleAPI](https://telegram.me/MouamleAPI)🌚🔩
-#### [@Malvoo](https://telegram.me/MastersDev)🌚🔧
+#### [@MastersDev](https://telegram.me/MastersDev)🌚🔧
  
 # My YouTube Channel
 #### [YouTube](https://www.youtube.com/channel/UCKsJSbVGNGyVYvV5B2LrUkA)
