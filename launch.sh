@@ -127,6 +127,7 @@ else
     exit 1
   fi
   
+  chmod 777 config_fix.sh
   
   echo -e "\033[38;5;208m"   
   echo -e " ╭━╮╭━╮╱╱╱╱╱╭╮               "
