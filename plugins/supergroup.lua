@@ -1762,8 +1762,8 @@ local function iDev1(msg, matches)
 			if not is_momod(msg) then
 				return
 			end
-			if tonumber(matches[2]) < 5 or tonumber(matches[2]) > 20 then
-				return "Wrong number,range is [5-20]"
+			if tonumber(matches[2]) < 3 or tonumber(matches[2]) > 30 then
+				return "Wrong number,range is [3-30]"
 			end
 			local flood_max = matches[2]
 			data[tostring(msg.to.id)]['settings']['flood_msg_max'] = flood_max
