@@ -239,7 +239,9 @@ function create_config( )
     "upredis",
     "me",
     "reply",
-    "autoReply"
+    "autoReply",
+    "delenum",
+    "shelp"
 
     },
     sudo_users = { 0,tonumber(our_id)},--Sudo users
