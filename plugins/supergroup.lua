@@ -540,7 +540,7 @@ function show_supergroup_settingsmod(msg, target)
         	NUM_MSG_MAX = tonumber(data[tostring(target)]['settings']['flood_msg_max'])
         	print('custom'..NUM_MSG_MAX)
       	else
-        	NUM_MSG_MAX = 5
+        	NUM_MSG_MAX = 3
       	end
     end
 	if data[tostring(target)]['settings'] then
@@ -776,7 +776,7 @@ function get_message_callback(extra, success, result)
 	elseif get_cmd == 'mute_user' then
 		if result.service then
 			local action = result.action.type
-			if action == 'chat_add_user' or action == 'chat_del_user' or action == 'chat_rename' or action == 'chat_change_photo' then
+			if action == 'chat_add_user' or action == 'chat_del_user' or action == 'chat_rename' or action == 'chat_change_photo' or action == 'channel_change_photo' then
 				if result.action.user then
 					user_id = result.action.user.peer_id
 				end
@@ -1287,7 +1287,7 @@ local function iDev1(msg, matches)
 				channel_kick_user("channel#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false)
 			end
 		end
-
+        
 		if matches[1] == 'newlink' and is_momod(msg)then
 			local function callback_link (extra , success, result)
 			local receiver = get_receiver(msg)
@@ -1330,7 +1330,20 @@ local function iDev1(msg, matches)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
 			return "Group link:\n"..group_link
 		end
-
+  
+         if matches[1] == 'link' and matches[2] == 'pv' then
+         if not is_momod(msg) then
+          return 'you are nor admin group'
+         end
+         local group_link = data[tostring(msg.to.id)]['settings']['set_link']
+         if not group_link then 
+          return "Create a link using /newlink first "
+         end
+         savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group link ["..group_link.."]")
+         send_large_msg('user#id'..msg.from.id, "Group link:\n"..group_link..'')
+          return 'link has been send in pv'  
+         end
+  
 		if matches[1] == "invite" and is_sudo(msg) then
 			local cbres_extra = {
 				channel = get_receiver(msg),
@@ -1749,8 +1762,8 @@ local function iDev1(msg, matches)
 			if not is_momod(msg) then
 				return
 			end
-			if tonumber(matches[2]) < 5 or tonumber(matches[2]) > 20 then
-				return "Wrong number,range is [5-20]"
+			if tonumber(matches[2]) < 3 or tonumber(matches[2]) > 30 then
+				return "Wrong number,range is [3-30]"
 			end
 			local flood_max = matches[2]
 			data[tostring(msg.to.id)]['settings']['flood_msg_max'] = flood_max
@@ -1973,7 +1986,7 @@ local function iDev1(msg, matches)
 		end
 
 		if matches[1] == 'help' and not is_owner(msg) then
-			text = "Message /superhelp to @Teleseed in private for SuperGroup help"
+			text = ""
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
@@ -2090,6 +2103,7 @@ return {
 	"^[#!/]([Cc]lean) (.*)$",
 	"^[#!/]([Mm]uteslist)$",
 	"^[#!/]([Mm]utelist)$",
+    "^[#!/]([Ll]ink) (pv)$",
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "^(https://telegram.me/joinchat/%S+)$",
@@ -2104,4 +2118,3 @@ return {
   run = iDev1,
   pre_process = pre_process
 }
-
