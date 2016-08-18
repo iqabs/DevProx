@@ -239,7 +239,6 @@ function create_config( )
     "help",
     "lk_tag",
     "lk_username",
-    "lk_reply",
     "lk_join",
     "lk_english",
     "lk_emoji",
