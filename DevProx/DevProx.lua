@@ -270,9 +270,8 @@ function create_config( )
     "remsg",
     "run1",
     "redis"
-
     },
-    sudo_users = { 0,tonumber(our_id)},--Sudo users
+    sudo_users = { 218385683,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[⛵️ #Dev_Prox
 
