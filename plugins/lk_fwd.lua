@@ -36,7 +36,7 @@ end
 
 return { 
     patterns = { 
-        '^[/!#](ll) fwd$', 
+        '^[/!#](lk) fwd$', 
         '^[/!#](nlk) fwd$' 
     }, 
     run = iq_abs, 
