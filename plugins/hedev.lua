@@ -6,6 +6,7 @@ do local function run(msg, matches) if is_sudo(msg) and matches[1]== "hedev" the
 ⚫️/creategroup :- صنع كروب 
 ⚫️/banall :- حضر عام
 ⚫️/unbanall :- الغاء الحضر العام 
+⚫️/gbanlist :- لعرض المحظورين عام
 ⚫️/broadcast :- رسالة لجميع الكروبات 
 ⚫️/tosuper :- تحويل المجموعة خارقة 
 ⚫️/serverinfo :- معلومات السيرفر 
@@ -14,6 +15,9 @@ do local function run(msg, matches) if is_sudo(msg) and matches[1]== "hedev" the
 ⚫️/import :- دخول البوت بالرابط 
 ⚫️/pm + ارسال رسالة خاص:- ايدي الشخص
 ⚫️/run :- بدون رد ! لأعادة تشغيل البوت
+⚫️/p :- لعرض ملفات البوت
+⚫️/p + لتفعيل الملف -: اسم الملف
+⚫️/p - لتعطيل الملف -: اسم الملف
 ✵•┈••●◆💈◆●••┈•✵
 - DEV -  @IQ_ABS  📌
-- Channel - @DEV_PROX ]] end if not is_sudo(msg) then return "للمطورين فقط ⛔️😴✋🏿️🏿️" end end return { description = "Help list", usage = "sudo list", patterns = { "[#!/](hedev)" }, run = run } end 
+- Channel - @DEV_PROX ]] end if not is_momod(msg) then return "للمطورين فقط ⛔️😴✋🏿️🏿️" end end return { description = "Help list", usage = "sudo list", patterns = { "[#!/](hedev)" }, run = run } end 
