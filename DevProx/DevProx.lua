@@ -272,18 +272,18 @@ function create_config( )
     },
     sudo_users = { 218385683,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[⛵️ #Dev_Prox
+    about_text = [[🚏- اهلا بك عزيزي WeLcOmE
+سورس ديف بروكس ( DevProx )
 
-⛽️ سورس ديف بروكس هوه احدث سورس نزل حاليا في التليكرام  ..
+〰 ➗ 〰 ✖️ 〰 ➕ 〰
+Developer ⛳️🏒  :
+🔸 - @IQ_ABS
+Channel sors 🏈  :
+🔹 - @DEV_PROX
+〰 ➗ 〰 ✖️ 〰 ➕ 〰
 
-رابط السورس : ↯
-https://github.com/iqabs/DevProx
-
-🚁 - DevLoper :  المطور
-🚀 - @IQ_ABS
-
-🚁 - Channel :  القناة
-🚀 - @DEV_PROX]],
+🛰 - رابط السورس :
+https://github.com/iqabs/DevProx.git : link in githup]],
     help_text = [[ْDEV @IQ_ABS]],
 	help_text_super =[[ْDEV @IQ_ABS]],
 help_text_realm = [[ْDEV @IQ_ABS]],
