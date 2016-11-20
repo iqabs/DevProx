@@ -2,7 +2,7 @@ package.path = package.path .. ';.luarocks/share/lua/5.2/?.lua'
   ..';.luarocks/share/lua/5.2/?/init.lua'
 package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
-require("./BoTMasters/utils")
+require("./DevProx/utils")
 
 local f = assert(io.popen('/usr/bin/git describe --tags', 'r'))
 VERSION = assert(f:read('*a'))
@@ -213,157 +213,80 @@ function create_config( )
   config = {
     enabled_plugins = {
     "admin",
-    "anti_spam",
+    "onservice",
+    "inrealm",
+    "ingroup",
+    "inpm",
     "banhammer",
-    "broadcast",
-    "get",
-    "set",
-    "inpv",
-    "invite",
-    "leave_ban",
-    "msg_checks",
-    "owners",
     "stats",
+    "anti_spam",
+    "owners",
+    "arabic_lock",
+    "set",
+    "get",
+    "broadcast",
+    "invite",
+    "all",
+    "leave_ban",
     "supergroup",
     "whitelist",
-    "pvhelp",
+    "msg_checks",
     "plugins",
-    "onservice",
-    "ingroup",
-    "inrealm",
+    "send",
+    "lk_fwd",
+    "lk_media",
+    "welcome",
     "help",
-    "pvhelp",
-    "lockfwd",
-    "linkpv",
-    "sudo",
-    "upredis",
+    "lk_tag",
+    "lk_username",
+    "lk_join",
+    "lk_english",
+    "lk_emoji",
+    "he1",
+    "he2",
+    "he3",
+    "he4",
+    "hedev",
+    "time",
+    "tagall",
+    "textphoto",
+    "sticker23",
+    "rebot",
+    "leave",
+    "block",
+    "dev",
+    "voice",
+    "weather",
+    "translate",
+    "writer",
+    "deltmsg",
     "me",
-    "reply",
-    "autoReply"
-
+    "info",
+    "azan",
+    "run",
+    "info",
+    "iq_abs",
+    "remsg",
+    "run1",
+    "redis"
     },
-    sudo_users = { 0,tonumber(our_id)},--Sudo users
+    sudo_users = { 218385683,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
-    about_text = [[! Masters Bot 2.1v 🔰
+    about_text = [[🚏- اهلا بك عزيزي WeLcOmE
+سورس ديف بروكس ( DevProx )
 
-The advanced administration bot based on Tg-Cli. 🌐
+〰 ➗ 〰 ✖️ 〰 ➕ 〰
+Developer ⛳️🏒  :
+🔸 - @IQ_ABS
+Channel sors 🏈  :
+🔹 - @DEV_PROX
+〰 ➗ 〰 ✖️ 〰 ➕ 〰
 
-It was built on a platform TeleSeed after it has been modified.🔧🌐
-
-https://github.com/MastersDev
-
-Programmer🔰
-@iDev1
-
-Special thanks to😋❤️
-TeleSeed Team
-Mico 
-Mouamle
-Oscar
-
-Our channels 😍👍🏼
-@MastersDev 🌚⚠️
-@OSCARBOTv2 🌚🔌
-@MouamleAPI 🌚🔩
-@Malvoo 🌚🔧
- 
-My YouTube Channel
-https://www.youtube.com/channel/UCKsJSbVGNGyVYvV5B2LrUkA]],
-    help_text = [[ارسل الامر 
-         !shelp 
-         او 
-         !pv help 
-        تجيك خاص
-        قناة السورس @MastersDev]],
-	help_text_super =[[🔰 The Commands in Super 🔰
-💭 اوامر الطرد والحضر والايدي
-🎩!block 🚩 لطرد العضو
-💲!ban  🚩🔞 لحظر العضو
-🎩!banlist 🆔 قائمة المحضورين
-💲!unban ℹ️ فتح الحظر
-🎩!id   🆔 عرض الايدي
-💲!kickme 💋 للخروج من الكروب
-🎩!kickinactive ✋طرد الممتفاعل
-💲!id from 🆔الايدي من اعادة توجية
-🎩!muteuser @ 👞 كتم عضو محدد
-💲!del 🎈 حذف الرساله بالرد
-💭 الاسم والصوره في السوبر مقفولة
-🔔!lock member 🔒قفل الاضافة
-🔕!unlock member 🔓فتح الاضافة
-💭 اوامر المنع
-🏁!lock links🔗 قفل منع الروابط
-⚽️!unlock links 🔗 فتح منع الروابط
-🏁!lock sticker✴️ قفل الملصقات
-⚽️!unlock sticker ✴️  فتح الملصقات
-🏁!lock strict 🛂 القفل الصارم 
-⚽️!unlock strict 🛂 فتح القفل الصارم
-🏁!lock flood 🚦🚧 قفل التكرار
-⚽️!unlock flood 🚦🚧 فتح التكرار
-🏁!setflood 5>20 لتحديد التكرار
-⚽️!lock fwd 🎃 قفل اعادة التوجيه
-🏁!unlock fwd 🎃 فتح قفل اعلاه
-⚽️!bot lock 💉 قفل البوتات
-🏁!bot unlock 💉 فتح قفل البوتات
-💭 اوامر الكتم 
-🃏!mute gifs 🗿 كتم الصور المتحركة
-🀄️!umute gifs 🗿 فتح كتم المتحركة
-🃏!mute photo 🗼 كتم الصور 
-🀄️!unmute photo 🗼 فتح كتم الصور
-🃏!mute video 🎬 كتم الفيديو
-🀄️!unmute video 🎬فتح كتم الفيديو
-🃏!mute audio 🔕 كتم البصمات
-🀄️!unmute audio🔔فتح البصمات
-🃏!mute all ➿ كتم الكل أعلاه
-🀄️!unmute all ➿ فتح كتم الكل أعلاه
-💭 اوامر التنظيف
-🎧!clean rules 〽️ تنظيف القوانين
-🎭!clean about 〽️ تنظيف الوصف
-🎧!clean modlist 〽️ تنظيف الادمنية
-🎭!clean mutelist تنظيف المكتومين
- 🔗 الرابط في المجموعة🆗✋
-💳!newlink 🚫🔗تغيير الرابط
-💰!link 🔗 استخراج الرابط
- 🔗 الرابط في الخاص🆗✋
-💳!linkpv 🔗  الرابط في الخاص
-
-💭 اوامر الوضع و التغيير
-📼!setname (الاسم) 💡تغيير الاسم
-📼!setphoto تعيين صوره للممجموعة
-📼!setrules (مسافه بعدها القوانين)
-📼!setabout (مسافه بعدها والوصف)
-💭 اوامر رفع وخفض ادمن
-🌟!promote ♻️ رفع ادمن 
-⭐️!demote ♻️ خفض ادمن 
-💭هذا الامر يقوم باضافه ايدي المجموعه الى قائمه الامر chats!
-💸!public yes لجعل المجموعه عامه 
-💸!public no لجعل المجموعه خاصه
-💭 اوامر معلوماتيه
-🔧!muteslist 🚧 معلومات الكتم 
-🔨!info 🐸 معلومات المجموعة
-🔩!res 🆔 لعرض معلومات الايدي
-🔧!rules 👀 لعرض القوانين
-🔨!modlist 🔧🔩 لاضهار الادمن
-🔩 me Ⓜ️ رتبتك بالكروب
-🔧!echo (الكلمه) ➿ حتى يتكلم
-🔨!owner 💯💮 مشرف المجموعه
-🔩!wholist 🆔 ايديات المجموعة
-🔧!who 🆔 ايديات المجموعه بملف
-🔨!settings 🔨اعدادت المجموعة
-🔩!bots 🚯 لاضهار بوتات المجموعة
-🔧!mutelist 🚧 قائمةالمكتومين
-💠〰〰〰〰〰〰〰〰〰💠
-⚠️قناة البوت اشتركو بيها
-@MastersDev 
-مجموعة دعم البوت
-@idev8
-♻️〰〰〰〰〰〰〰〰〰♻️
-          💠 Pro :- @iDev1 💠]],
-help_text_realm = [[ارسل الامر 
-         !shelp 
-         او 
-         !pv help 
-        تجيك خاص
-        قناة السورس @MastersDev]],
+🛰 - رابط السورس :
+https://github.com/iqabs/DevProx.git : link in githup]],
+    help_text = [[ْDEV @IQ_ABS]],
+	help_text_super =[[ْDEV @IQ_ABS]],
+help_text_realm = [[ْDEV @IQ_ABS]],
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')

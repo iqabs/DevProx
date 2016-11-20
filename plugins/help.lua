@@ -1,21 +1,15 @@
-do
---local function help()
-local function iDev1(msg,matches)
-    if matches[1] == 'help' then
-  local help_text = tostring(_config.help_text)
-  return help_text
-      end
-      savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /help")
-      return help()
-    end
-   
-return {
-    patterns = {
-        '[#!/](help)'
-        
-    },
+do local function run(msg, matches) 
+local reply_id = msg['id']
+ if is_momod(msg) and matches[1]== "help" then return [[ WELCOOME TO help list 🚁
 
-  run = iDev1
-}
-
-end
+🌍- هناك خمس قوائم لٲدارة المجموعة 
+🌎- There are five list in the group
+〰➖〰➖〰➖〰➖〰
+🔵 - /he1 — اوامر ادارة المجموعة 
+⚫️ - /he2 — اوامر حماية المجموعة 
+⚪️ - /he3 — اوامر الطرد والرفع
+🔴 - /he4 —  اوامـر اضـآفـيـة 
+🔘 - /hedev —  اوامر ألمطورين 
+〰➖〰➖〰➖〰➖〰
+- DEV - @IQ_ABS   🗞📌
+- Channel - @DEV_PROX ]] end if not is_momod(msg) then return "للمشرفين فقط ⛔️😴✋🏿" end end return { description = "Help list", usage = "Help list", patterns = { "[#!/](help)" }, run = run } end 

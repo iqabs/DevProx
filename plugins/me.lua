@@ -1,34 +1,40 @@
-do
-function run(msg, matches)
-local reply_id = msg['id']
-if is_sudo(msg) then
-    reply_msg(get_receiver(msg), "./files/me/sudo.webp", ok_cb, false)
-      local info = 'انت مطور'
- reply_msg(reply_id, info, ok_cb, false)
-elseif is_admin1(msg) then
-    reply_msg(get_receiver(msg), "./files/me/admin.webp", ok_cb, false)
-    local info = 'انت مساعد مطور'
- reply_msg(reply_id, info, ok_cb, false)
-elseif is_owner(msg) then
-    reply_msg(get_receiver(msg), "./files/me/leader.webp", ok_cb, false)
-    local info = 'انت مشرف'
- reply_msg(reply_id, info, ok_cb, false)
-elseif is_momod(msg) then
-    reply_msg(get_receiver(msg), "./files/me/moderator.webp", ok_cb, false)
-    local info = 'انت ادمن'
- reply_msg(reply_id, info, ok_cb, false)
- else
-    reply_msg(get_receiver(msg), "./files/me/member.webp", ok_cb, false)
-      local info = 'انت عضو'
-      reply_msg(reply_id, info, ok_cb, false)
- end
-end
-return {
-    patterns ={
-        
-    "^([mM][Ee])$"
-},
-run = run
-}
-end
+--[[ 
+$ :) 
+-- - ( #MASCO_ماسكو ) - -- 
+$ :) 
+-- - ( @IQ_ABS ) - -- 
+$ :) 
+--Channel-( @DEV_PROX )-- 
+$ :) 
+]]-- 
+do 
 
+local function iq_abs(msg, matches) 
+if is_sudo(msg) then 
+        local text = "أنـت مـطـور الـبـؤت 🕵🔧".."\n".."🆔 - أيـۧديـۧک : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك  : @"..msg.from.username.."\n".."©- أســم ألـمـجـمـوعـة : "..msg.to.title.."\n"..'📱 - رقـۖـمـۗـک : '..(msg.from.phone or "لُايَوَجْدِ ⛔️‼️")
+        return reply_msg(msg.id, text, ok_cb, false) 
+     end 
+if is_momod(msg) then 
+        local text = "أنـت أدمــن ألـكـروب 🛳⚓️".."\n".."🆔 - أيـۧديـۧک : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك : @"..msg.from.username.."\n".."©- أســم ألـمـجـمـوعـة : "..msg.to.title.."\n"..'📱 - رقـۖـمـۗـک : '..(msg.from.phone or "لُايَوَجْدِ ⛔️‼️")
+        return reply_msg(msg.id, text, ok_cb, false) 
+     end 
+if not is_momod(msg) then 
+        local text = "أنـت عـضـوو 😹💙".."\n".."🆔 - أيـۧديـۧک : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك : @"..msg.from.username.."\n".."©- أسـم ألـمـجـمـوعـة : "..msg.to.title.."\n"..'📱 - رقـۖـمـۗـک : '..(msg.from.phone or "لُايَوَجْدِ ⛔️‼️")
+        return reply_msg(msg.id, text, ok_cb, false) 
+     end 
+if is_owner(msg) then 
+        local text = "أنـت مــديــر ألـكـروب 🤖🤘🏼".."\n".."🆔 - أيـۧديـۧک : "..msg.from.id.."\n".."🏧- أســمـك : "..msg.from.first_name.."\n".."🚸- مــعــرفــك  : @"..msg.from.username.."\n".."©- أســم ألـمـجـمـوعـة : "..msg.to.title.."\n"..'📱 - رقـۖـمـۗـک : '..(msg.from.phone or "لُايَوَجْدِ ⛔️‼️")
+        return reply_msg(msg.id, text, ok_cb, false) 
+     end 
+     end 
+
+return { 
+  patterns = { 
+       "^[!/](me)$", 
+  }, 
+  run = iq_abs, 
+} 
+
+end 
+
+-- BY - @IQ_ABS 

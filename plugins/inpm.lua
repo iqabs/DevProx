@@ -208,16 +208,16 @@ if to == 'user' or service or is_admin1(msg) and to == "chat" or to == "channel"
 
 	if matches[1] == 'help' and msg.to.type == 'user' or matches[1] == 'pmhelp' and is_admin1(msg) and msg.to.type ~= 'user' then
       	savelog(msg.to.id, name_log.." ["..msg.from.id.."] used pm help")
-		text = "! Masters Bot 2.1v 🔰\n\nThe advanced administration bot based on Tg-Cli. 🌐\n\nIt was built on a platform TeleSeed after it has been modified.🔧🌐\n\nhttps://github.com/MastersDev\n\nProgrammer🔰\n@iDev1\n\nSpecial thanks to😋❤️\nTeleSeed Team\nMico \nMouamle\nOscar\n\nOur channels 😍👍🏼\n@MastersDev 🌚⚠️\n@OSCARBOTv2 🌚🔌\n@MouamleAPI 🌚🔩\n@Malvoo 🌚🔧\n \nMy YouTube Channel\nhttps://www.youtube.com/channel/UCKsJSbVGNGyVYvV5B2"
+		text = "Welcome to TeleSeed!\n\nTo get a list of TeleSeed groups use /chats or /chatlist for a document list of chats.\n\nTo get a new TeleSeed group, contact a support group:\n\nFor English support, use: /join English support\n\nFor Persian support, use: /join Persian support\n\nFor more information, check out our channels:\n\n@TeleseedCH [English]\n@Iranseed [Persian]\n\nThanks for using @TeleSeed!"
      	return text
     end
 
-	if matches[1] == 'shelp' and is_admin1(msg)then
-      	savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /shelp")
+	if matches[1] == 'superhelp' and is_admin1(msg)then
+      	savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /superhelp")
      	return super_help()
-	elseif matches[1] == 'shelp' and to == "user" then
+	elseif matches[1] == 'superhelp' and to == "user" then
 		local name_log = user_print_name(msg.from)
-      	savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /shelp")
+      	savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /superhelp")
      	return super_help()
     end
 
@@ -243,11 +243,13 @@ end
 
 return {
     patterns = {
+	"^[#!/](help)$",
 	"^[#!/](pmhelp)$",
-  --  "^[#!/](shelp)$",
+	"^[#!/](superhelp)$",
     "^[#!/](chats)$",
     "^[#!/](chatlist)$",
     "^[#!/](join) (%d+)$",
+	"^[#!/](join) (.*) (support)$",
     "^[#!/](kickme) (.*)$",
     "^!!tgservice (chat_add_user)$",
     },
